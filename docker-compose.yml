@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    image: project-hub-image
+    container_name: project-hub-container
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    deploy:
+      restart_policy:
+        delay: 5s
+        condition: on-failure
+        max_attempts: 5
