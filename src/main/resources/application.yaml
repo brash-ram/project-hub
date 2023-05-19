@@ -1,0 +1,33 @@
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+server:
+  port: 8080
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+    properties:
+      hibernate:
+        format_sql: true
+        generate_statistics: false
+        jdbc:
+          batch_size: 50
+          fetch_size: 50
+        order_updates: true
+        order_insert: true
+    open-in-view: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:h2:file:./data/projectHub
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+
+  application:
+    name: project-hub
